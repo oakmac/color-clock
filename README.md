@@ -2,49 +2,8 @@
 
 ## Objectives
 
-After completing this assignment, you should be able to:
+This digital clock background is based on a hex gradient, which is obtained by converting hours, minutes, and seconds to the equivalent hex values. The hex gradient can be viewed by hovering over the time. Hex gradient constantly changes as the time changes.
 
-* Demonstrate understanding of functions, loops/array, variadic behavior, `setTimeout()` and `setInterval()`
-* Be able to breakdown a simple process of mathematical steps into a series of statements in JS
-* Demonstrate Functional Programming methods
-* Demonstrate use of DOM APIs (`querySelector()`, `querySelectorAll()`, `addEventListener()`)
-* Combine approaches of CSS layout, animation, transitions
-* Convert numbers between binary and hex (using `parseInt()` and `Number.toString()`)
+Progress of each minute is shown as the image reduces in size.
 
-## Details
-
-### Instructions
-
-```sh
-$ cd <Projects folder>
-$ mkdir <projectname>
-$ cd <projectname>
-$ git init
-$ hub create <projectName>
-
-```
-
-### Requirements
-
-* A visible, up-to-date `gh-pages` branch must be on Github. If you are pushing to Divshot / Heroku / AWS / etc, that is also fine... as long as we can load the page on the web!
-
-## Normal Mode
-
-### Stage I:
-
-Just recreate this static page:
-
-![](./static-clock.gif)
-
-* That is, format a Date() object and put it on the page using this layout.
-* Add hover functionality to show the hex color of the gradient instead of the time.
-
-### Stage II:
-
-Bring your color clock to life:
-
-![](./clock.gif)
-
-* Make the clock "tick" and change the gradient in tandem.
-* Add the horizontal line that shows the progress of each minute.
-# color-clocks
+View clock on gh-pages [here](https://jennypenfield.github.io/color-clock/).
