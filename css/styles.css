@@ -13,12 +13,11 @@ div {
   background-image:
     radial-gradient(
       circle,
-      white,
+      #fff,
       #000000
       );
   border-top: 20px black solid;
   border-bottom: 20px black solid;
-  /*border-radius: 300px;*/
   height: 500px;
   width: 100%;
   margin: 0 auto;
