@@ -27,11 +27,24 @@ body {
   padding-top: 80px;
 }
 
+#circleBorder {
+  /*background-color: #ccc;*/
+  border: 3px solid black;
+  border-radius: 140px;
+  height: 280px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  width: 280px
+}
+
 #hourglass {
   display: block;
   height: 20%;
-  margin: 0 auto;
-  padding-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 40px;
   width: 20%;
 }
 
