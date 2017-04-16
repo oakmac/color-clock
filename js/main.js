@@ -3,50 +3,66 @@
 var isHex = false
 
 function init () {
-  setInterval(function getTime () {
-    var date = new Date()
-    var hours = makeTwoDigits(date.getHours())
-    var minutes = makeTwoDigits(date.getMinutes())
-    var seconds = makeTwoDigits(date.getSeconds())
-    $('p#time').html(hours + ':' + minutes + ':' + seconds)
-    setHexGradient(hours, minutes, seconds)
-  }, 1000)
+  setInterval(setTime, 1000)
 
-  function makeTwoDigits (time) {
-    if (time.length < 2) {
+  function setTime () {
+    var date = new Date()
+    var hours = makeTwoDigitsTime(date.getHours())
+    var minutes = makeTwoDigitsTime(date.getMinutes())
+    var seconds = makeTwoDigitsTime(date.getSeconds())
+    if (isHex) {
+      $('#time').html(setHexTime(hours, minutes, seconds))
+    } else {
+      $('#time').html(hours + ':' + minutes + ':' + seconds)
+    }
+    setHexGradient(hours, minutes, seconds)
+    setClockSize(seconds)
+  }
+
+  function makeTwoDigitsTime (time) {
+    if (time < 10) {
       return '0' + time
     } else {
       return time
     }
   }
 
-  getHexGradient()
-  function getHexGradient () {
-    var date = new Date()
-    var hours = makeTwoDigits(date.getHours()).toString(16)
-    var minutes = makeTwoDigits(date.getMinutes()).toString(16)
-    var seconds = makeTwoDigits(date.getSeconds()).toString(16)
-    isHex = true
-    return '#' + hours + ':' + minutes + ':' + seconds
+  function makeTwoDigitsHex (hexNum) {
+    if (hexNum.length < 2) {
+      return '0' + hexNum
+    } else {
+      return hexNum
+    }
   }
 
   function setHexGradient (hours, minutes, seconds) {
-    var hourHex = makeTwoDigits(hours.toString(16))
-    var minHex = makeTwoDigits(minutes.toString(16))
-    var secHex = makeTwoDigits(seconds.toString(16))
-    var hexGradient = function () {
-      return '#' + hourHex + minHex + secHex
-    }
-    $('.gradient').css('background', 'radial-gradient(circle, #fff, ' + hexGradient() + ')')
-    console.log(hexGradient())
+    var hourHex = makeTwoDigitsHex(hours.toString(16))
+    var minHex = makeTwoDigitsHex(minutes.toString(16))
+    var secHex = makeTwoDigitsHex(seconds.toString(16))
+    var hexGradient = '#' + hourHex + minHex + secHex
+    $('.gradient').css('background', 'radial-gradient(circle, #fff, ' + hexGradient + ')')
+    console.log(hexGradient)
   }
 
-  $('p#time').hover(function () {
+  function setClockSize (seconds) {
+    var percentage = (100 - (seconds / 60 * 100)) * 2
+    $('#hourglass').css({'width': percentage, 'height': percentage})
+  }
+
+  function setHexTime (hours, minutes, seconds) {
+    var hourHex = makeTwoDigitsHex(hours.toString(16))
+    var minHex = makeTwoDigitsHex(minutes.toString(16))
+    var secHex = makeTwoDigitsHex(seconds.toString(16))
+    return '#' + hourHex + ':' + minHex + ':' + secHex
+  }
+
+  $('#time').hover(function () {
     if (isHex) {
-      $('p#time').html(getTime())
+      isHex = false
     } else {
-      $('p#time').html(getHexGradient)
+      isHex = true
     }
   })
 }
+
 $(document).ready(init)

@@ -4,11 +4,6 @@ body {
   text-align: center;
 }
 
-div {
-  display: block;
-  /*vertical-align: middle;*/
-}
-
 .gradient {
   background-image:
     radial-gradient(
@@ -18,14 +13,35 @@ div {
       );
   border-top: 20px black solid;
   border-bottom: 20px black solid;
-  height: 500px;
+  height: 50%;
   width: 100%;
   margin: 0 auto;
 }
 
-p {
+#time {
+  align-items: center;
+  display: inline-block;
   font-family: 'Chewy', Arial;
   font-size: 80px;
-  padding-top: 120px;
-  /*vertical-align: middle;*/
+  margin: 0 auto;
+  padding-top: 80px;
+}
+
+#hourglass {
+  display: block;
+  height: 20%;
+  margin: 0 auto;
+  padding-bottom: 40px;
+  width: 20%;
+}
+
+footer {
+  color: magenta;
+  font-family: 'Chewy', Arial;
+  font-size: 16px;
+  padding: 10px;
+}
+
+a#githublink {
+  text-decoration: none;
 }
