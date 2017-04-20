@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Chewy');
 
 body {
+  background-color: #000;
+  margin: 0;
   text-align: center;
 }
 
@@ -28,7 +30,6 @@ body {
 }
 
 #circleBorder {
-  /*background-color: #ccc;*/
   border: 3px solid black;
   border-radius: 140px;
   height: 280px;
@@ -49,12 +50,13 @@ body {
 }
 
 footer {
-  color: magenta;
+  color: #fff;
   font-family: 'Chewy', Arial;
   font-size: 16px;
   padding: 10px;
 }
 
 a#githublink {
+  color: #cc66ff;
   text-decoration: none;
 }
