@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Chewy');
 
+#flexContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
 body {
   background-color: #000;
   margin: 0;
@@ -15,7 +22,7 @@ body {
       );
   border-top: 20px black solid;
   border-bottom: 20px black solid;
-  height: 50%;
+  flex: 6;
   width: 100%;
   margin: 0 auto;
 }
@@ -26,18 +33,18 @@ body {
   font-family: 'Chewy', Arial;
   font-size: 80px;
   margin: 0 auto;
-  padding-top: 80px;
+  padding-top: 20px;
 }
 
-#circleBorder {
-  border: 3px solid black;
-  border-radius: 140px;
+#imageContainer {
+  /*border: 3px solid black;*/
+  /*border-radius: 140px;
   height: 280px;
-  margin-bottom: 30px;
+  margin-bottom: 30px;*/
   margin-left: auto;
   margin-right: auto;
   margin-top: 30px;
-  width: 280px
+  width: 280px;
 }
 
 #hourglass {
@@ -46,11 +53,12 @@ body {
   margin-left: auto;
   margin-right: auto;
   padding-top: 40px;
-  width: 20%;
+  /*width: 20%;*/
 }
 
 footer {
   color: #fff;
+  flex: 2;
   font-family: 'Chewy', Arial;
   font-size: 16px;
   padding: 10px;
